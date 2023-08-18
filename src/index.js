@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createHashRouter, RouterProvider} from "react-router-dom";
 import FishbowlHome from "./fishbowl";
 import EditEntry from "./fishbowl/entry/edit";
 import EntriesPage from "./fishbowl/entry";
@@ -11,7 +11,7 @@ import DrawingPage from "./fishbowl/drawing";
 import PrizesPage from "./fishbowl/prizes";
 import CustomizeForm from "./fishbowl/customize-form";
 
-let router = createBrowserRouter([
+let router = createHashRouter([
   {
     path: "/",
     element: <App />
