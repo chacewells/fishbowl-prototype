@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import {Link} from "react-router-dom";
 
 function App() {
+  const fishbowls = [
+    {
+      id: "f1",
+      name: "Fishbowl 1"
+    },
+    {
+      id: "f2",
+      name: "Fishbowl 2"
+    },
+    {
+      id: "f3",
+      name: "Fishbowl 3"
+    }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Fishbowls</h1>
+      <ul>
+        {fishbowls.map((f) => (
+          <li key={f.id}>
+            <Link to={`/fishbowl/${f.id}`}>{f.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
