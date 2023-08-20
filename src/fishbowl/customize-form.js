@@ -15,49 +15,61 @@ function DataTypeSelect({value}) {
   ];
 
   return (
-    <select value={value}>
+    <select className="form-control" value={value}>
       {options.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
     </select>
   )
 }
 
-export default function CustomizeForm() {
+function CustomizationItem({seq, fieldName, dataType}) {
   return (
-    <>
-      <table>
-        <thead>
-        <tr>
-          <th>Field Name</th>
-          <th>Data Type</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td><input type="text" value="Full Name"/></td>
-          <td>
-            <DataTypeSelect value="text"/>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="text" value="Company"/></td>
-          <td>
-            <DataTypeSelect value="text"/>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="text" value="Years With Company"/></td>
-          <td>
-            <DataTypeSelect value="number"/>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="text" value="Date of Birth"/></td>
-          <td>
-            <DataTypeSelect value="date"/>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </>
+    <div className="row" style={{
+      marginBottom: "1em"
+    }}>
+      <div className="card-body">
+        <div className="card-title input-group">
+          <span className="input-group-text">Label</span>
+          <input id={`item-label-${seq}`} className="form-control" type="text" value={fieldName}/>
+        </div>
+        <div className="card-text input-group">
+          <span className="input-group-text">Type</span>
+          <DataTypeSelect value={dataType}/>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function CustomizeForm() {
+  const customFields = [
+    {
+      fieldName: "Full Name",
+      dataType: "text",
+    },
+    {
+      fieldName: "Company",
+      dataType: "text",
+    },
+    {
+      fieldName: "Years With Company",
+      dataType: "number",
+    },
+    {
+      fieldName: "Date of Birth",
+      dataType: "date",
+    },
+  ];
+
+  return (
+    <div style={{
+      padding: "1em",
+      paddingLeft: "2em"
+    }}>
+      <h1>Custom Fields</h1>
+      {customFields.map(({fieldName, dataType}, idx) => (
+        <CustomizationItem key={idx} seq={idx} fieldName={fieldName} dataType={dataType}/>
+      ))}
+      <button className="btn btn-success">+ Add</button>
+    </div>
   );
 }
