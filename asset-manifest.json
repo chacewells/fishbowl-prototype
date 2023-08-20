@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/fishbowl-prototype/static/css/main.069cb807.css",
-    "main.js": "/fishbowl-prototype/static/js/main.fb1ea3c2.js",
+    "main.js": "/fishbowl-prototype/static/js/main.49dc2cf0.js",
     "static/js/787.24a28dcd.chunk.js": "/fishbowl-prototype/static/js/787.24a28dcd.chunk.js",
     "index.html": "/fishbowl-prototype/index.html",
     "main.069cb807.css.map": "/fishbowl-prototype/static/css/main.069cb807.css.map",
-    "main.fb1ea3c2.js.map": "/fishbowl-prototype/static/js/main.fb1ea3c2.js.map",
+    "main.49dc2cf0.js.map": "/fishbowl-prototype/static/js/main.49dc2cf0.js.map",
     "787.24a28dcd.chunk.js.map": "/fishbowl-prototype/static/js/787.24a28dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.069cb807.css",
-    "static/js/main.fb1ea3c2.js"
+    "static/js/main.49dc2cf0.js"
   ]
 }
