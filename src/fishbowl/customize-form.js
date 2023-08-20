@@ -61,10 +61,7 @@ export default function CustomizeForm() {
   ];
 
   return (
-    <div style={{
-      padding: "1em",
-      paddingLeft: "2em"
-    }}>
+    <div className="container container-fluid">
       <h1>Custom Fields</h1>
       {customFields.map(({fieldName, dataType}, idx) => (
         <CustomizationItem key={idx} seq={idx} fieldName={fieldName} dataType={dataType}/>
