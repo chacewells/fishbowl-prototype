@@ -18,13 +18,11 @@ function Home() {
 
   return (
     <>
-      <div className="container container-fluid">
-        <h1>Fishbowls</h1>
-        <div className="list-group list-group-flush">
-          {fishbowls.map((f) => (
-            <Link className="list-group-item list-group-item-action" key={f.id} to={`/fishbowl/${f.id}`}>{f.name}</Link>
-          ))}
-        </div>
+      <h1>Fishbowls</h1>
+      <div className="list-group list-group-flush">
+        {fishbowls.map((f) => (
+          <Link className="list-group-item list-group-item-action" key={f.id} to={`/fishbowl/${f.id}`}>{f.name}</Link>
+        ))}
       </div>
     </>
   );

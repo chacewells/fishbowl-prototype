@@ -5,7 +5,9 @@ import Layout from "./components/Layout";
 function App() {
   return (
     <Layout>
-      <Outlet/>
+      <div className="container container-fluid">
+        <Outlet/>
+      </div>
     </Layout>
   );
 }
