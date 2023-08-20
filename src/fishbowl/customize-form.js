@@ -24,7 +24,7 @@ function DataTypeSelect({value}) {
 function CustomizationItem({seq, fieldName, dataType}) {
   return (
     <div className="row" style={{
-      marginBottom: "1em"
+      marginBottom: "0.5em"
     }}>
       <div className="card-body">
         <div className="card-title input-group">
