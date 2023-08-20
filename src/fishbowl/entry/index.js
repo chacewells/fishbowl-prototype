@@ -1,33 +1,44 @@
-export default function EntriesPage() {
+function EntryItem({entry}) {
   return (
-    <>
+    <div className="card" style={{
+      marginBottom: "0.5em"
+    }}>
+      {entry.map((field) => (
+        <div className="card-body">
+          <h5 className="card-title">{field.key}</h5>
+          <div className="card-text">{field.value}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function EntriesPage() {
+  const entries = [
+    [
+      {key: "Full Name", value: "Richard Bronson"},
+      {key: "Company", value: "Virgin Airways"}
+    ],
+    [
+      {key: "Full Name", value: "Elon Musk"},
+      {key: "Company", value: "Tesla"}
+    ],
+    [
+      {key: "Full Name", value: "Sundar Pichai"},
+      {key: "Company", value: "Alphabet"}
+    ],
+    [
+      {key: "Full Name", value: "Zuck"},
+      {key: "Company", value: "Meta"}
+    ],
+  ];
+
+  return (
+    <div className="container container-fluid">
       <h1>All Entries</h1>
-      <table>
-        <thead>
-        <tr>
-          <th>Name</th>
-          <th>Company</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Richard Bronson</td>
-          <td>Virgin Airways</td>
-        </tr>
-        <tr>
-          <td>Elon Musk</td>
-          <td>Tesla</td>
-        </tr>
-        <tr>
-          <td>Sundar Pichai</td>
-          <td>Alphabet</td>
-        </tr>
-        <tr>
-          <td>Zuck</td>
-          <td>Meta</td>
-        </tr>
-        </tbody>
-      </table>
-    </>
+      {entries.map((entry, idx) => (
+        <EntryItem key={idx} entry={entry}/>
+      ))}
+    </div>
   )
 }
