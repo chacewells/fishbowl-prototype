@@ -26,16 +26,22 @@ export default function PrizesPage() {
     prizeInputRef.current.value = "";
     setPrizes([...prizes, newPrize]);
 
-    setNextId(1+nextId);
+    setNextId(1 + nextId);
   }
 
   return (
     <>
       <h1>Fishbowl {fishbowlId} Prizes</h1>
-      <ul>
-        {prizes.map((p) => <li key={p.id}>{p.name}</li>)}
-      </ul>
-      <input type="text" ref={prizeInputRef}/> <button onClick={handleAdd}>+ Add</button>
+      <div className="list-group list-group-flush">
+        {prizes.map((p) => <div key={p.id} className="list-group-item">{p.name}</div>)}
+        <div className="list-group-item">
+          <div className="input-group mb-3">
+            <input ref={prizeInputRef} type="text" className="form-control" placeholder="Prize Name"
+                   aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+              <button onClick={handleAdd} className="btn btn-primary input-group-text" id="basic-addon2">+ Add</button>
+          </div>
+        </div>
+      </div>
     </>
-  )
+)
 }
