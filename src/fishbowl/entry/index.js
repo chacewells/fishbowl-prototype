@@ -39,6 +39,7 @@ export default function EntriesPage() {
       {entries.map((entry, idx) => (
         <EntryItem key={idx} entry={entry}/>
       ))}
+      <button className="btn btn-primary">Export</button>
     </div>
   )
 }
